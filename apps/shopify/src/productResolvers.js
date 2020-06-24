@@ -51,7 +51,7 @@ export const fetchProductPreviews = async (skus, config) => {
   {
     nodes (ids: [${queryIds}]) {
       id,
-      ...on ProductVariant(filter: { product: { type: 'Inkbox Tattoo V3' }}) {
+      ...on ProductVariant {
         sku,
         image {
           src: originalSrc
