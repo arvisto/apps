@@ -81,7 +81,7 @@ class Pagination {
    * a new search term.
    */
   async _fetchProducts(search) {
-    const query = { query: `variants:['sku:${search}'] OR title:${search}` };
+    const query = { query: `(product_type: Inkbox Tattoo OR product_type: Inkbox Tattoo On Demand OR product_type: Inkbox Tattoo) AND (variants:['sku:${search}'] OR title:${search})` };
     return await this.shopifyClient.product.fetchQuery({
       first: PER_PAGE,
       sortBy: 'TITLE',
